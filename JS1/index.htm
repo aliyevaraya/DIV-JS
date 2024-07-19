@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main{
+            padding: 20px;
+        }
+        input, button{
+            border: 2px solid orange;
+            padding: 10px;
+            width: 100px;
+            margin: 0 20px 20px 0;
+            border-radius: 5px;
+            outline: none;
+        }
+        button{
+            width: 60px;
+            background: #fff;
+            border: 2px solid red;
+        }
+        p{
+            color: rgb(175, 118, 13);
+            font: 1.2em/1.5 Arial;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <input id="n1" type="number" placeholder="write number">
+        <input id="n2" type="number" placeholder="write number">
+        <input id="n3" type="number" placeholder="write number">
+        <button onclick="hesabla()">Ok</button>
+        <p>Cəm: <span id="cem"></span></p>
+        <p>Ort: <span id="ort"></span></p>
+        <p>Hasil: <span id="hasil"></span></p>
+    </main>
+
+
+    <script>
+        let n1 = document.getElementById("n1")
+        let n2 = document.getElementById("n2")
+        let n3 = document.getElementById("n3")
+        let cem = document.getElementById("cem")
+        let ort = document.getElementById("ort")
+        let hasil = document.getElementById("hasil")
+
+        function hesabla(){
+            cem.innerHTML = +n1.value + +n2.value + +n3.value
+            ort.innerHTML = cem.innerHTML / 3
+            hasil.innerHTML = n1.value * n2.value * n3.value
+        }
+
+    </script>
+</body>
+</html>
