@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Muqayise</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .task1,
+      .task2 {
+        height: 33vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        font-size: 1.2em;
+      }
+      input,
+      button {
+        padding: 5px 20px;
+        margin: 0 5px;
+        border: 2px solid olivedrab;
+        border-radius: 5px;
+        outline: none;
+        background: transparent;
+      }
+      .task2 {
+        flex-direction: column;
+        background: lightseagreen;
+        gap: 5px;
+        button {
+          background: #aaa;
+          border: none;
+        }
+      }
+      .task2 input {
+        padding: 5px;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="task1">
+      <input id="number1" type="number" />
+      <button id="isare" onclick="compare()">?</button>
+      <input id="number2" type="number" />
+    </div>
+    <div class="task2">
+      <div>
+        <input id="a" type="number" />X<sup>2</sup> +
+        <input id="b" type="number" />X + <input id="c" type="number" /><button
+          onclick="hesabla()"
+        >
+          =
+        </button>
+        0
+      </div>
+      <div>
+        <p>x1 = <span id="x1"></span></p>
+        <p>x2 = <span id="x2"></span></p>
+      </div>
+    </div>
+    <script>
+      let number1 = document.getElementById("number1");
+      let number2 = document.getElementById("number2");
+      let btn = document.getElementById("isare");
+      function compare() {
+        btn.innerHTML =
+          +number1.value > +number2.value ? ">" : +number1.value < +number2.value ? "<" : "=";
+      }
+
+      let a = document.getElementById("a");
+      let b = document.getElementById("b");
+      let c = document.getElementById("c");
+      let x1 = document.getElementById("x1");
+      let x2 = document.getElementById("x2");
+      function hesabla() {
+        let dsk = b.value ** 2 - 4 * a.value * c.value;
+        if (dsk > 0) {
+          x1.innerHTML = (-+b.value + Math.sqrt(dsk)) / (2 * a.value);
+          x2.innerHTML = (-+b.value - Math.sqrt(dsk)) / (2 * a.value);
+        } else if (dsk == 0) {
+          x1.innerHTML = x2.innerHTML = -+b.value / (2 * a.value);
+        } else {
+          x1.innerHTML = x2.innerHTML = "heqiqi koku yoxdur";
+        }
+      }
+    </script>
+  </body>
+</html>

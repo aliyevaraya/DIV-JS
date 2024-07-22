@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: lightskyblue;
+      }
+      div {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      h1 {
+        text-align: center;
+        padding: 90px 0 0 0;
+      }
+      input {
+        width: 50px;
+        height: 50px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ededleri Muqayise Et(bir zehmet)</h1>
+    <div>
+      <input id="a" type="number" />
+      <span id="muqayise1"></span>
+      <input id="b" type="number" />
+      <span id="muqayise2"></span>
+      <input id="c" type="number" />
+      <button onclick="yoxla()">Yoxla</button>
+    </div>
+
+    <script>
+      let a = document.getElementById("a");
+      let b = document.getElementById("b");
+      let c = document.getElementById("c");
+      let muqayise1 = document.getElementById("muqayise1");
+      let muqayise2 = document.getElementById("muqayise2");
+      function yoxla() {
+        if (+a.value > +b.value) {
+          muqayise1.innerHTML = ">";
+          muqayise2.innerHTML =
+            +b.value > +c.value ? ">" : +b.value < +c.value ? "<" : "=";
+        } else if (+a.value < +b.value) {
+          muqayise1.innerHTML = "<";
+          muqayise2.innerHTML =
+            +b.value > +c.value ? ">" : +b.value < +c.value ? "<" : "=";
+        } else {
+          muqayise1.innerHTML = "=";
+          muqayise2.innerHTML =
+          +b.value > +c.value ? ">" : +b.value < +c.value ? "<" : "=";
+        }
+      }
+    </script>
+  </body>
+</html>
