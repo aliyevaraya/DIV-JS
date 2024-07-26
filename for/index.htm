@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Loop</title>
+    <style>
+      div {
+        margin: 20px;
+      }
+      input,
+      button {
+        width: 50px;
+        padding: 5px;
+      }
+      span {
+        color: red;
+      }
+      table{
+        margin: 10px 0;
+        border-collapse: collapse;
+      }
+      table td{
+        border: 3px solid red;
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input id="inp1" type="number" />
+      <button onclick="gerisay()">Ok</button>
+      <span id="yaz1"></span>
+    </div>
+    <div>
+      <input id="inp2" type="number" />
+      <button onclick="topla()">Ok</button>
+      <span id="yaz2"></span>
+    </div>
+    <div>
+      <input id="inp3" type="number" />
+      <input id="qeder" type="number" />
+      <button onclick="artir()">Ok</button>
+      <span id="yaz3"></span>
+    </div>
+    <div>
+      <input id="inp4" type="number" />
+      <button onclick="duz()">Ok</button>
+      <table>
+        <tr></tr>
+      </table>
+    </div>
+
+    <script>
+      //////// Task 1 ////////
+      let inp1 = document.querySelector("#inp1");
+      let yaz1 = document.querySelector("#yaz1");
+
+      function gerisay() {
+        let kod = inp1.value;
+        for (let i = inp1.value - 1; i >= 1; i--) {
+          kod += "," + i;
+        }
+        yaz1.innerHTML = kod;
+      }
+
+      /////////// Task2 /////////////
+      let inp2 = document.querySelector("#inp2");
+      let yaz2 = document.querySelector("#yaz2");
+      function topla() {
+        let miqdar = inp2.value;
+        let kod = 1;
+        for (let i = 1 + +miqdar; i <= 100; i += +miqdar) {
+          kod += "," + i;
+          console.log(i);
+        }
+        yaz2.innerHTML = kod;
+      }
+
+      //////// Task3 ///////
+      let inp3 = document.querySelector("#inp3");
+      let qeder = document.querySelector("#qeder");
+      let yaz3 = document.querySelector("#yaz3");
+
+      function artir() {
+        let kod = 1;
+        for (let i = 1 + +qeder.value; i <= inp3.value; i += +qeder.value) {
+          kod += "," + i;
+        }
+        yaz3.innerHTML = kod;
+      }
+
+      //////////// Task4 //////////
+      let inp4 = document.querySelector("#inp4");
+      let tr = document.querySelector("tr");
+
+      function duz() {
+        let kod = ''
+        for (let i = inp4.value; i >= 1; i--) {
+          kod += `<td> ${i} </td>`
+        }
+        tr.innerHTML = kod
+      }
+    </script>
+  </body>
+</html>

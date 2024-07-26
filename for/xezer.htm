@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li{
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3>
+        1-den 50-ye qeder sade ededleri tap <button onclick="tap()">Ok</button>
+      </h3>
+      <div id="netice"></div>
+    </div>
+    <div>
+      <h3>Sade edeleri tap</h3>
+      <p></p>
+      <button onclick="deyis()">Ok</button>
+    </div>
+    <div>
+      <h3>ededin reqemlerini cemle</h3>
+      <input id="number" type="number" />
+      <button onclick="sum()">ok</button>
+      <span id="cem"></span>
+    </div>
+    <div>
+      <h3>Fibanocci edeleri</h3>
+      <input id="fibo" type="number" placeholder="nece eded fibo eded cixarsin">
+      <button onclick="goster()">Ok</button>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+    <script>
+
+      ////////// Task 1 ////////////
+      let netice = document.getElementById("netice");
+
+      // function tap() {
+      //   let kod = 2
+      //   for (let i = 3; i < 10; i++) {
+      //     for (let j = 3; j < 10; j++) {
+      //             if(i%j != 0) kod += ',' + i
+      //             console.log(i%j);
+      //           }
+      //           netice.innerHTML = kod
+      //     }
+      // }
+
+
+      //////// Task 2 ///////////
+      let p = document.querySelector("p");
+
+      function deyis() {
+        let qaliq = "";
+        let tam = "";
+        let ters = "";
+        for (let i = 1; i < 50; i++) {
+          qaliq = i % 10;
+          tam = Math.trunc(i / 10);
+          ters = i < 10 ? qaliq : qaliq * 10 + tam;
+          p.innerHTML += `${i} tersi: ${ters} <br />`;
+        }
+      }
+
+
+      ////////// Task 3 //////
+      let number = document.querySelector("#number");
+      let cem = document.querySelector("#cem");
+      let eded = number.value;
+      let cemi = 0;
+      function sum() {
+        while (eded) {
+          cemi += +eded % 10;
+          eded = Math.floor(eded/10)
+        }
+        console.log(eded);
+        console.log(cemi);
+        cem.innerHTML = cemi;
+      }
+
+      ////////// Task 4 ////////////
+      let fibo = document.getElementById("fibo")
+      let li = document.querySelector("li")
+      let a = 0
+      let b = 1
+      let ntc
+      function goster() {
+        for (let i = 0; i <= 100; i++) {
+          ntc = a+b
+          a=b
+          b=ntc
+        }
+        li.innerHTML += `Fibonacci Series ${ntc}`
+        console.log(a);
+        console.log(b);
+      }
+    </script>
+  </body>
+</html>
