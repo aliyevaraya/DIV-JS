@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <input type="number">
+    <button onclick="sum()">Ok</button>
+    <div id="ntc"></div>
+
+    <script>
+        const inp = document.querySelector("input")
+        const ntc = document.querySelector("#ntc")
+
+        function sum() {
+            let inpVal = inp.value
+            let cem = 0
+            for (let i = 0; i < inpVal.length; i++) {
+                cem += +inpVal[i] 
+            }
+            ntc.innerHTML = cem
+        }
+    </script>
+</body>
+</html>

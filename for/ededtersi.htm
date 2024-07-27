@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>Ededleri tersine cevir</h4>
+    <button onclick="go()">Ok</button>
+    <div id="ntc"></div>
+
+    <script>
+      let ntc = document.getElementById("ntc");
+      let kod = "";
+
+      ///////// optimal yol deyil /////////
+      
+    //   function go() {
+    //     let qaliq = "";
+    //     let tam = "";
+    //     let ters = "";
+    //     for (let i = 1; i < 50; i++) {
+    //       qaliq = i % 10;
+    //       tam = Math.trunc(i / 10);
+    //       ters = i < 10 ? qaliq : qaliq * 10 + tam;
+    //       ntc.innerHTML += `${i} tersi: ${ters} <br />`;
+    //     }
+    //   }
+
+
+      function go() {
+        for (let i = 1; i <= 100; i++) {
+          let eded = i.toString();
+          // let eded = String(i) ve ya let eded = `${i}`
+          kod += `${i} tersi: `;
+          if (eded.length == 1) kod += `${eded} <br />`;
+          else {
+            let yeni = "";
+            for (let j = eded.length-1; j >= 0; j--) {
+              yeni += eded[j];
+            }
+            kod += `${yeni} <br />`;
+          }
+          ntc.innerHTML = kod;
+        }
+      }
+    </script>
+  </body>
+</html>
