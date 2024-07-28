@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table 7</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: space-between;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 10vh 10px;
+      }
+      td {
+        border: 1px solid #333;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+      }
+      .green {
+        background: olivedrab;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="tbl"></table>
+    <table id="tbl2"></table>
+    <table id="tbl3"></table>
+    <table id="tbl4"></table>
+
+    <script>
+      const table = document.getElementById("tbl");
+      let kod = "";
+      let color = "";
+      for (let i = 1; i <= 4; i++) {
+        kod += `<tr>`;
+        for (let j = 1; j <= 4; j++) {
+          color = i % 2 == 0 ? "green" : "";
+          kod += `<td class= ${color}></td>`;
+        }
+        kod += `</tr>`;
+      }
+      table.innerHTML = kod;
+
+      const table2 = document.getElementById("tbl2");
+      let kod2 = "";
+      for (let i = 1; i <= 4; i++) {
+        kod2 += `<tr>`;
+        for (let j = 1; j <= 4; j++) {
+          color = i + j <= 5 ? "green" : "";
+          kod2 += `<td class= ${color}></td>`;
+        }
+        kod2 += `</tr>`;
+      }
+      table2.innerHTML = kod2;
+
+      const table3 = document.getElementById("tbl3");
+      let kod3 = "";
+      for (let i = 1; i <= 4; i++) {
+        kod3 += `<tr>`;
+        for (let j = 1; j <= 4; j++) {
+          color = i + j >= 5 ? "green" : "";
+          kod3 += `<td class= ${color}></td>`;
+        }
+        kod3 += `</tr>`;
+      }
+      table3.innerHTML = kod3;
+
+      const table4 = document.getElementById("tbl4");
+      let kod4 = "";
+      let number = 4;
+      for (let i = 1; i <= number; i++) {
+        kod4 += `<tr>`;
+        for (let j = 1; j <= number; j++) {
+          color = (i == 1 || j == 1 || i == number || j == number) ? "green" : ""
+          kod4 += `<td class= ${color}></td>`;
+        }
+        kod4 += `</tr>`;
+      }
+      table4.innerHTML = kod4;
+    </script>
+  </body>
+</html>

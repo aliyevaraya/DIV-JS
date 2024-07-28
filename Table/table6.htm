@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table 6</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 10vh 10px;
+      }
+      td {
+        border: 1px solid #333;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+      }
+      .green {
+        background: olivedrab;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="tbl"></table>
+    <script>
+      const table = document.getElementById("tbl");
+      let kod = "";
+      let color = "";
+      let number = 8;
+      for (let i = 1; i <= number; i++) {
+        kod += `<tr>`;
+        for (let j = 1; j <= number; j++) {
+          if (
+            (i + j >= number + 1 && i >= j) ||
+            (i <= j && i + j <= number + 1)
+          ) {
+            color = "green";
+            kod += `<td class="${color}"></td>`;
+          } else kod += `<td></td>`;
+        }
+        kod += `</tr>`;
+      }
+      table.innerHTML = kod;
+    </script>
+  </body>
+</html>
