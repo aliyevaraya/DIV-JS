@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" />
+    <button onclick="boyut()">Ok</button>
+    <p></p>
+    <script>
+        const inp = document.querySelector('input')
+        const yaz = document.querySelector('p')
+
+        function boyut() {
+            yazi = inp.value
+            yaz.innerHTML = yazi.toLocaleUpperCase()
+        }
+    </script>
+</body>
+</html>

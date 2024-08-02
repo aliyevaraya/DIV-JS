@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" />
+    <button onclick="edit()">Ok</button>
+    <div></div>
+
+    <script>
+        const inp = document.querySelector('input')
+        const ntc = document.querySelector('div')
+        function edit() {
+            let text = inp.value
+            kod = ''
+            for (let i = 0; i < text.length; i++) {
+                kod += text[i] ? text[i] : ''
+            }
+            ntc.innerHTML = kod
+        }
+    </script>
+</body>
+</html>

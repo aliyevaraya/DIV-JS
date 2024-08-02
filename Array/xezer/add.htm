@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" />
+    <button onclick="add()">Ok</button>
+    <button onclick="sil()">Sil</button>
+    <p></p>
+
+    <script>
+        const inp  = document.querySelector('input')
+        const text  = document.querySelector('p')
+        let arr = ['Hello']
+        
+        function yaz() {
+            text.innerHTML = arr.join(', ')
+            inp.value = ''
+        }
+        
+        function add() {
+            arr.push(inp.value)
+            arr.unshift(inp.value)
+            yaz()
+        }
+        
+        function sil() {
+            arr.pop()
+            yaz()
+        }
+    </script>
+</body>
+</html>

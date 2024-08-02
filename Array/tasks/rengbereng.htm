@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button onclick="rengle()">Ok</button>
+    <h1></h1>
+
+    <script>
+      const inp = document.querySelector("input");
+      const text = document.querySelector("h1");
+
+      function rand(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function rengle() {
+        let yazi = inp.value;
+        let kod = "";
+        for (let i = 0; i < yazi.length; i++) {
+          let color = `rgb(${rand(0, 255)}, ${rand(0, 255)}, ${rand(0, 255)})`;
+          kod += `<span style="color: ${color};">${yazi[i]}</span>`;
+        }
+        text.innerHTML = kod.toLocaleUpperCase();
+      }
+    </script>
+  </body>
+</html>

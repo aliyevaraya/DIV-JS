@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="inp" type="text" />
+    <button onclick="yaz()">Ok</button>
+    <div></div>
+    <script>
+      const inp = document.querySelector("#inp");
+      const text = document.querySelector("div");
+
+      function yaz() {
+        let yazi = inp.value;
+        let kod = "";
+        for (let i = 0; i < yazi.length; i++) {
+          kod += `${yazi.slice(0, i)}${yazi[i].toLocaleUpperCase()}${yazi.slice(
+            i+1
+            
+          )} <br />`;
+        }
+        text.innerHTML = kod;
+      }
+    </script>
+  </body>
+</html>
